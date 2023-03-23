@@ -7,7 +7,7 @@ namespace WebApplication2.Controllers
     {
         public static List<Book> _books = new List<Book>();
         // GET: BookMVCController
-        public IActionResult Index()
+        public ActionResult Index()
         {
             //Book book = new Book();
             //book.Title = "Title 1";
@@ -23,7 +23,7 @@ namespace WebApplication2.Controllers
         }
 
         // GET: BookMVCController/Details/5
-        public IActionResult Details(int id)
+        public ActionResult Details(int id)
         {
 
             Book? book = _books.Find(b => b.Id == id);
@@ -37,7 +37,7 @@ namespace WebApplication2.Controllers
         }
 
         // GET: BookMVCController/Create
-        public IActionResult Create()
+        public ActionResult Create()
         {
             return View();
         }
@@ -45,7 +45,7 @@ namespace WebApplication2.Controllers
         // POST: BookMVCController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Book book)
+        public ActionResult Create(Book book)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace WebApplication2.Controllers
         }
 
         // GET: BookMVCController/Edit/5
-        public IActionResult Edit(int id)
+        public ActionResult Edit(int id)
         {
 
 
@@ -85,7 +85,7 @@ namespace WebApplication2.Controllers
         // POST: BookMVCController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, Book book)
+        public ActionResult Edit(int id, Book book)
         {
 
             Book? existingBook = _books.Find(b => b.Id == id);
@@ -103,7 +103,7 @@ namespace WebApplication2.Controllers
         }
 
         // GET: BookMVCController/Delete/5
-        public IActionResult Delete(int id)
+        public ActionResult Delete(int id)
         {
             Book? book = _books.Find(b => b.Id == id);
             if (book == null)
@@ -118,7 +118,7 @@ namespace WebApplication2.Controllers
         // POST: BookMVCController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id, Book book)
+        public ActionResult Delete(int id, Book book)
         {
 
             Book? bookToRemove = _books.Find(b => b.Id == id);
